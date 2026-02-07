@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Apology</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Soft floating hearts */
+        .heart {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: radial-gradient(circle, #ff6b81 40%, transparent 42%);
+            transform: rotate(45deg);
+            animation: float 8s linear infinite;
+            opacity: 0.6;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: "";
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            background: #ff6b81;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -18px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: -18px;
+            top: 0;
+        }
+
+        @keyframes float {
+            from {
+                transform: translateY(100vh) rotate(45deg);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(-20vh) rotate(45deg);
+                opacity: 0.8;
+            }
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 45px 35px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            animation: fadeIn 1.4s ease;
+        }
+
+        h1 {
+            font-size: 2.3em;
+            color: #ff6b81;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: white;
+            padding: 14px 40px;
+            font-size: 1.1em;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255,107,129,0.45);
+        }
+
+        .btn:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(255,107,129,0.55);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            p { font-size: 1.1em; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>💌 I Have Something to Say nani..</h1>
+        <p>click below to continue...... ❤️</p>
+
+        <a href="message.html" class="btn">read</a>
+    </div>
+
+    <!-- Floating hearts -->
+    <script>
+        for (let i = 0; i < 20; i++) {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = 6 + Math.random() * 6 + "s";
+            heart.style.animationDelay = Math.random() * 5 + "s";
+            document.body.appendChild(heart);
+        }
+    </script>
+
+</body>
+</html>
