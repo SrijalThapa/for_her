@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Message 💌</title>
+<style>
+    /* Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: url('airport.jpeg') no-repeat center center;
+    background-size: 90% auto; /* 👈 image looks smaller */
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+
+
+    body::before {
+        content: '';
+        position: absolute;
+        top:0; left:0;
+        width: 100%; height: 100%;
+        background: rgba(255,255,255,0.5);
+        z-index: 0;
+        backdrop-filter: blur(5px);
+    }
+
+    /* Heart/Rose animation */
+    .heart {
+        position: absolute;
+        background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAAA8FBMVEX////fOEzJGUAAAADb4urfOErfN07///3g5uz19/jq6+/7+/vZ2dnhN0zLGD/w8vTQ0NDh4eGPj49nZ2dhYWEmJia2trasrKzVK0hvb288PDzp6ek3NzdISEiFhYW9vb2PGjNVVVV9fX0eHh4WFhYSCQraPlJzKjCjo6NCEhzGxsYNDQ3FNkmUKji1Hj/fIz26N0iYNUHYXGzaTmA6FhliJSymNkT/8/anHjtsGSpaFSIxDxdPGCSHITfJJUooDhGFLzoeDA7ff4zjm6H31tvJACzGAB/fi5X0x8765erop7Dotr3PHjnZantMHSB3FyvcooQ+AAAO10lEQVR4nO1deV/iOhe25U2VqS3giIogAkrVUQEFWVQQlxnXcb7/t7nJOSmLJphCF3x/PH/cO0Ib+vSsOUlPl5YWWGCBBRZYYIEFFlhggQUUkEitJhlWU4k5HE4d8eTmWimzXtxhKK5nSmubyez0w2U/DJenw8X9u9pJiO/m13fSsXGkt4uZw9Q0w6UOM8XtvY/D7aznd4Pns1r6RMTF3nbx0OMFmIefiQwJlVaD4cCRLMp+GnGcLnkQT6qUPp443P7Or+Co7Iz+0tX7xUG/3z84uGiURz9fV7yfq+ujZ5Ub15cdhsujq9HPd5KBUFn96f7A7dXFWc0xLBeGUzu9aNwMKP1cNb8azByOVr69uuy2ez3d5tB77e7lze1wNN+pZDcHt/Cg6VAGhBANQf9N/3Zq/evBPV37QtlSa+6RN9eddg85uIA/KoXLI/fubM7gKUVIcp24fT89oSIBHoQYyMYwLA34NP+989/f25hwAdmNPX7YUafAJKJ/AuXTq3RdOqqaq4TExj4MenxxesKEotGLNwhxhWNoBLhRhat1r7lNl6TKnizF+Gjd2tbWlr4lIgOEKt3rMr83vkVSVymoVDTUL4NCE4DSOTm9xqNzm8ILSGzm8PtrJmM4a4tREoLSOeKK65OqpTJ4Iw9qVCKUg2FVAUwaAjraydkN3s68wHJSeRTybZ+pKz0eTgJCIjK23u6gcDK+qFoKzeW26TCtIhqp/q7f3b/cOdWhDxiCKptm1C5kup4sohZe1BwLjQ2NTmNjCfXN7hWQzfpUCcYHLkUYqlFjYqA/WdXuH1ot02y17n9/5oIWRJwzZJP+EPR+8ezhzCGWezgFuynsNEtMp9KAk4ozs8lioLxwmMEbpPrn8Xnw3dMfseUwzrUGd6ujg21wd1wTiJRrqYCNrvfQcHZmtJsEcjkwqAejSlE9H1JZXmqdy66JemrnAK/8cDjYIX5y4LDBJCcaQtPRL5HNTD4tjjrW10AsxLkfDe3LrfOq+IIM6r2Jdoq6vuYejz6xfEoHkkhUYwpnCNn8Q02bJZOG3y/3DULvpFWtPzF5DPH8ZgkvyWJWQC+3iaq2BnfARC6NpsHMRaJnQEYoHP1feezOeMcucnHARMn5A/1oGdmw/5p/xYKBi2Ie3KhBQnDMJgbxQ3Bj7zUaimRUNHD8VKYCNnavAzdjd1ouKfj9ixP285oFXDiWGaeXqibTfFdCyGZv0zQ391wuE08BCNnoFbCb4yldWhwS2/cT0Ioq5TKiYpTM628ymQtzA8gmt7GR41w0UaT9eJqEDfi0n9OZzSGL1TdNAyJh/WGgYohXR+UeW+iit7cxVlksDfqCDOZ8IjYFllnsH0oveAJWd9D4mRclbw8fvn1yCFGQDGUTG6BmSY1lXC7MDYgCDjiBnWnyGvA+Rw5TcvLndeQLJp+nOlEQDMpmwOUrGxuDgI2NijaFR/u1jTeTXXP1cSS+MGV7cqRR7zMdntqcMUkqSIbDErm0Nuis98IACOYAbn+13hr/7sGpWpqaZNg97sNQMCVVJcPctyhP6wwDlwckQTA08aCXwAxm1PYpFw/32LCci3L5gsrS+trKOAiLVIJUwK6AaLwWOSCP6sP8uHo/fice6tJgKbnLTrPpMHshqkYDErREbDof8j0VwCTm+ISlWKQ+TC6ZwTyfVz3YMQBqOB7P0SQ+gDk0j1ObX6jmVC0s62UoGMql9deTU5oJn32ArYNoPLmA+Bq6MpYA06zfNRjmyB6r6qY/GwzyWc/oNBpcgJc0IMvM/53puUHuhx9jEqOFJRkics8Qa7a9TNOSEBiojmksjxnxZA+OeqSYmQshoqQGZjYesgDzkGsZtd27YYxZpll/SCoGZAyhdwY9O1QPNfF1TJdZZHwZ5pfLSy9vqpHCHzIC0dgVVgReVzeaBE7VKRdSH80wH+rKkcIXMoaIDPoz9WrAKjv8lI5nkXPXYuj/WnfVELUM+GgCoyl4M5rNgcmQR5xVAqVXIzzrdyFwAWA0m19xGCDPZlInIIWX4az/+e9b6FyEZNh8L69MZh2n/kzMr1wyS8vmq3LOGygZu8Iq8+vKZNJg/5pLBj98llTJwifDKhtpZTKQMTtcMhzmSxRcRGSw6KTKxUQyGsvCB2SeQ4z9E8nwHEA1akKYOWUBhWiPblHmMRLBCIu1XS+BJhuDkjAbi5zzO/AQZuwfJSMQTYEVJ1VTTRYzy02YZVoO17NolExc3ITVJ9WoOUJGe8NFDHlZ+VuQOeUli+r5U6v1WI1GMJrQA0xNhhjVt7oTGZfZJZMCMjyntAipEoVqd1CQkVGtaWQHrhlujnBVOSyIXDOkzareLI5kLKTi1FVq5EFBGjSVZ2eDDIDONO8fnh/+avNHRpXLMDezCBTN6ERmjsh4y82Wcpg1WwbBknnLicpqhEWAjqesOYPzGaJV75aQTMjT5SFElTM2n8kok8njmp1mVB+RzIn6coy/EKVm7StPM03YFtJkdea/SKY+TzYDeeaGMhkoaDY1wyJ1E6YA9UjUTFhq4mFGfYkm6/pmVgNkiIiMyP65Z1YvNieYO7sA31x/fW61nqKZABjCzAxKADn1ImC8NKg1EXJ+d1fXFNeWfQXRBGsalAyz/5J6edbEKiAOWa2+kUicGRFnZlgD9LBGC/XZMy3CZBkgcsx21+OSxlIKKmdGWGtkUjICwcA+urSXRc0EywFunGjUawCRL7MrbANNxsuWQG400h17IZERCabg1WR42Owb0yx4+8dFuMGx4y1kMsA+gEZ0mT9AuCHwxvs+gMHaeYQQCsb7yjnFLsvmDiJ1AMJNwUzLjr1u1Fxlm4Bvo5rHwBZ00fa5HivMFL1unzMj1jPxhmCuZV63aC1tQNy0oqv+iQRjQ8RUn8u4AH8WmZ4ZYouZZk8TIA8ztKj0TJjJYF6mPmMeAjZpNgwP+xf9Ads3IdwCxJ/WmGKLJnUBkJ81rRD3ZCDgSYJPFkM/sAvseceMZ/NngB3vl07YWQA8eCC0mB4z/72pNmnjszNsl3i4ZGT7zalfZnPMaZ+hYaGm3A/dZmSCwUrGtA+dZPd5MTBkiK3fbjPz35/6Ua0STgRC5iJM/V3BlKblgvWz95BFI/BkABCMh3rZJ8DjpmdMNCGKR/w0bQ8Eo14vl4imcWKFNEvD9UYhF3RlHjYACpDnhdqw/DMRG4xrMdNkMh9Ec0tjTTjZs0EsIRcqmPKMFrPkbgo+8PLgyyyQ5GQ6Vsu8bAAWIpXDolM4XCRKxgtMuVkfo8cKWiOMeQ0R5ZeoZL0r79UyEbLwgGM/eDIGkSmZjcWynz70N4CGF8fBR07xagxaP+OSnvrh2RHAYk3sOvD1JvEj2qBk0Mgi70u7I+ydcxawaMTGD51PIMT41U1n7Riz52BLNZII48b+GZ43H4MJXTTeg/Vo4gfnmZJBgrk+sydzscqCzXE/0DRAFi1RyXI+ttGBPKDRxOYlAUDmyKjFFHxVMgAo2vUJtFIIgIs0WuJGGQ87/1WQ2oMczQko45TpGO5giu350HJmFLCd5vYsmJnAlqj3FAimC8my9+LyF4BVgdsm0Xx+tNGQLF4AoOrnr8EAMEe7OfF7tzaZpGRXfuVkH5GEycCRI+8aMx0ZWYBxI0wukEZ60LgldmH4vKAu54JtgPzILwXA9kR9y/Jz3ikNlvgIo9fH5ZXBm/qcsZY/vhRtpTMYBliLmWLJTxVZqKPdnmr+rHPIKuTIBZxyJgDjdwFr0LGbpnrPhYlkpLbPe8x4X1f2BHRprHObH6KZwAWcci64BqeAX5DXHLE+dLOlaRN0zOZ15b2AufCGFLFGW1PvVeKRi1sj99ZcYjpgL7yr9oSeaypk5Fz41DKoACNic9u2Z4k3ctu329i50vfsUgiTt6Ft28bUwWaCH2vj6LNX/BTB2XRtGxpgerQdaac8kEuBcwmJytKg72JX17eoI9C82Q6ZJJdu6FyobKC7Z/lfRd/a8jz5lHBhnZqxjWE6VC7UC0D0LHcqOqOj5AncY2SVfl2vYJ/ZXDi2P4JdbO572daRDnTwmRhIYVOMtAjLTB9z/lwoPnkcv7Bh6FFBBzq4JDFZMtLNF4AChspiCLHyM3ib8qtuz0bpfPE8p7RxIRiM3sVQGUBLcyWksCX27WUFKhL2ljZ5H/QEN2b3Otih3Usrfn+R4C76qGJzOoMtA+MKR7BvuNwlV3jD7MOQX6QxBt56/aqrY7mIhlFDE85CqdBkpm/zjD92HLJL/gj3xQdc1RgMQR9D1mJatpaE7Upigb3QwANwKk1Vra27dAS+YJKK8YQ/kPqYZ6xhxGEBdCCdrY9OWsqFB8pYzv+65VTgESd2PRSOzkPPQMtka+Jt3ng/mugiQraEjdiPR4WD+gbuTZaM6Vjkp8lYaR5UjMPc5MI5KozTsbdkbzCwqeHzmB8rhjZ5UcMqf3lB+bKgS4v642JpX6K17OcjCvpyJHa5k77qtL+mw97EwN+JsrMbZaCUIZuPuXQqktWjAZeKSyWWnyNrGYWZyrl0MPmUUel1XSq51HxZyxh4skZtR0qHUhm8QyioEr9PiHNHEIs1uj0Rl16Xv5iCGn5ILzObAasZ991hDeqnP6BScKmk/XkHS+DYHdC5+teu8NcYsfcwtf9dDajszrGxjMHcyOzxq77pgHiASueGf7iX2fguVBgSGxnXdsrsxV96u3vpmv1+xr83MIWE7G7elU6s0em4phJL53fnNLJMRCK59uk1gum15HeTiot4anN7lMr2Zmr+vbEcZjxZdKkUk/HvZPZiJJi2pde+q3p9QiqyatgC/1dYHnvTzsingMEf4V7UlFheHrtu4affhsySkMzSKA/89lsQEpP5+rQ5FphJEU8AfoxhZWVl+EeCI27OURB176hpsmtf4fifOvgZjB7nFZ2M6C8nfni5+K/wI8oswU8iHCuRCSf+w5NWfc1k5Uc8KjLsZ+NDa5meAjedRDxCt8bCBv6L+rB43HVhK2oYeDZ6quvW5sxHU34mIC4HHrA8d9c+hmH28sVVLo8eOq8xk0Hx4r5H+rmspjxzrmQLLLDAAgsssMACC8yK/wC1l4jj6vndxQAAAABJRU5ErkJggg==') no-repeat center/contain;
+        opacity: 0.9;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh) scale(1); opacity: 0.8; }
+        50% { opacity: 1; }
+        100% { transform: translateY(-100px) scale(1.2); opacity: 0; }
+    }
+
+    @keyframes floatDown {
+        0% { transform: translateY(-100px) scale(1); opacity: 0.8; }
+        50% { opacity: 1; }
+        100% { transform: translateY(100vh) scale(1.2); opacity: 0; }
+    }
+
+    .container {
+        background: rgba(255,255,255,0.95);
+        padding: 50px 35px;
+        border-radius: 25px;
+        box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+        max-width: 600px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 1.5s ease-in-out;
+        border: 2px solid #ff6b81;
+    }
+
+    h1 {
+        font-size: 2.8em;
+        color: #ff6b81;
+        margin-bottom: 25px;
+        text-shadow: 2px 2px 8px rgba(255,107,129,0.4);
+    }
+
+ body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35); 
+    backdrop-filter: blur(4px);
+    z-index: 0;
+}
+
+    
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        background: linear-gradient(45deg, #ff6b81, #ff4757);
+        color: white;
+        padding: 14px 35px;
+        font-size: 1.1em;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 25px rgba(255,107,129,0.4);
+    }
+
+    .btn:hover {
+        background: linear-gradient(45deg, #ff4757, #ff6b81);
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 14px 30px rgba(255,107,129,0.5);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width:600px){
+        .container {padding: 35px 20px;}
+        h1 {font-size: 2.2em;}
+        p {font-size: 1.15em;}
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hey Love 💖</h1>
+        <p>
+            I just wanted to tell you something special before saying sorry…<br>
+            Do you want to know why I'm still here, even when you try to push me away? It's because my love for you is something I can't just walk away from. I want to love you in the way I know how, to remind you every day that you're worth the effort, the care, and all the little things I do.
+            I stay because seeing you happy means everything to me. I stay because I want you to feel that no matter what happens, you'll always have someone who chooses you. My love isn't measured by perfect moments it's shown in my patience, my effort, and the way I never give up on you. And I'll keep loving you, in ways big or small, until you finally feel how much you truly mean to me.. 💕<br>
+            Please read my next message.
+        </p>
+        <a href="memories.html" class="btn">Continue</a>
+    </div>
+
+    <!-- Floating hearts -->
+    <script>
+        const totalHearts = 50;
+
+        // Bottom to top
+        for(let i=0;i<totalHearts;i++){
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random()*100 + 'vw';
+            heart.style.width = (30 + Math.random()*40) + 'px';
+            heart.style.height = heart.style.width;
+            heart.style.animation = `floatUp ${4 + Math.random()*6}s linear infinite`;
+            heart.style.animationDelay = Math.random()*5 + 's';
+            document.body.appendChild(heart);
+        }
+
+        // Top to bottom
+        for(let i=0;i<totalHearts;i++){
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            heart.style.left = Math.random()*100 + 'vw';
+            heart.style.width = (30 + Math.random()*40) + 'px';
+            heart.style.height = heart.style.width;
+            heart.style.animation = `floatDown ${4 + Math.random()*6}s linear infinite`;
+            heart.style.animationDelay = Math.random()*5 + 's';
+            document.body.appendChild(heart);
+        }
+    </script>
+</body>
+</html>
