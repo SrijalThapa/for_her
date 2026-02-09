@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sweet Days With You ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+}
+
+/* SECTION */
+.section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* CHOCOLATE DAY */
+.choco {
+    background: linear-gradient(135deg, #4b2e1e, #8b5a3c);
+}
+
+/* TEDDY DAY */
+.teddy {
+    background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+}
+
+/* TITLE */
+h1 {
+    font-size: 3rem;
+    color: #fff;
+    z-index: 3;
+    text-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* FALLING ITEMS */
+.fall {
+    position: absolute;
+    animation: fall linear infinite;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.big {
+    font-size: 70px;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-15vh);
+        opacity: 0;
+    }
+    15% { opacity: 1; }
+    100% {
+        transform: translateY(120vh);
+        opacity: 0;
+    }
+}
+
+/* BUTTON */
+.btn {
+    position: absolute;
+    bottom: 40px;
+    padding: 14px 40px;
+    background: linear-gradient(45deg, #ff4b5c, #ff6f91);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    z-index: 4;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .big {
+        font-size: 45px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🍫 CHOCOLATE DAY -->
+<section class="section choco" id="choco">
+    <h1>Happy Chocolate Day 🍫❤️</h1>
+    <a href="#teddy" class="btn">Next 🧸</a>
+</section>
+
+<!-- 🧸 TEDDY DAY -->
+<section class="section teddy" id="teddy">
+    <h1>Happy Teddy Day 🧸❤️</h1>
+    <!-- ✅ FIXED LINK -->
+    <a href="promise.html" class="btn">Continue 💞</a>
+</section>
+
+<script>
+/* 🍫 Chocolate Fall ONLY in Chocolate Section */
+const chocoSection = document.getElementById('choco');
+
+for (let i = 0; i < 20; i++) {
+    const choco = document.createElement('div');
+    choco.className = 'fall big';
+    choco.textContent = '🍫';
+    choco.style.left = Math.random() * 100 + 'vw';
+    choco.style.animationDuration = 5 + Math.random() * 4 + 's';
+    choco.style.animationDelay = Math.random() * 4 + 's';
+    chocoSection.appendChild(choco);
+}
+
+/* 🧸 Teddy Fall ONLY in Teddy Section */
+const teddySection = document.getElementById('teddy');
+
+for (let i = 0; i < 18; i++) {
+    const teddy = document.createElement('div');
+    teddy.className = 'fall big';
+    teddy.textContent = '🧸';
+    teddy.style.left = Math.random() * 100 + 'vw';
+    teddy.style.animationDuration = 6 + Math.random() * 4 + 's';
+    teddy.style.animationDelay = Math.random() * 5 + 's';
+    teddySection.appendChild(teddy);
+}
+</script>
+
+</body>
+</html>
