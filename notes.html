@@ -197,15 +197,10 @@ function yesClick() {
     document.getElementById('noBtn').style.display = 'none';
     // Start falling love emojis
     startFallingHearts();
-    // Redirect to notes.html after 3 seconds
-    setTimeout(() => {
-        window.location.href = 'notes.html';
-    }, 3000);
 }
 
 function noClick() {
     document.getElementById('yesBtn').style.display = 'none';
-    // Redirect immediately to apology.html
     window.location.href = 'apology.html';
 }
 
