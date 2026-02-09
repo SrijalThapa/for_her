@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propose Day 💍❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff6a88, #ff99ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Main Card */
+.card {
+    background: rgba(255,255,255,0.96);
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+    padding: 35px;
+    animation: fadeIn 1.2s ease;
+}
+
+/* Layout */
+.content {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+}
+
+/* Photo Section */
+.photo-box {
+    flex: 1;
+    text-align: center;
+}
+
+.photo-box img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(255,90,120,0.5);
+    border: 4px solid #ffd1dc;
+}
+
+/* Text Section */
+.text-box {
+    flex: 1;
+}
+
+.text-box h1 {
+    color: #ff3f6c;
+    font-size: 2.4rem;
+    margin-bottom: 18px;
+}
+
+.text-box p {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    color: #333;
+    margin-bottom: 18px;
+}
+
+.highlight {
+    background: #fff0f5;
+    padding: 15px;
+    border-left: 5px solid #ff3f6c;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: linear-gradient(45deg, #ff3f6c, #ff6f91);
+    color: white;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 12px 25px rgba(255,63,108,0.45);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 18px 35px rgba(255,63,108,0.6);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Layout */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-box h1 {
+        font-size: 2rem;
+    }
+
+    .text-box p {
+        font-size: 1.05rem;
+    }
+
+    .highlight {
+        text-align: left;
+    }
+
+    .card {
+        padding: 28px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="content">
+
+        <!-- PHOTO -->
+        <div class="photo-box">
+            <img src="purpose.jpeg" alt="My forever ❤️">
+        </div>
+
+        <!-- TEXT -->
+        <div class="text-box">
+            <h1>Happy Propose Day, mero mutuu 💍❤️</h1>
+
+            <p>
+ I know things haven’t been easy , and we’ve both been hurt.
+But my feelings for you never disappeared.
+            </p>
+
+            <div class="highlight">
+                <p>
+                    Ma perfect xaina, ma sadhai galti garchu.  
+                    Tara ek kura ma sure xu   
+                    <strong>timi nai mero forever choice hau.</strong>
+                </p>
+            </div>
+
+            <p>
+                Timro haat samatera yo life sangai chalna man xa.  
+                Khusi ma, dukha ma,  
+                timro silence ra timro smile dubai ma.
+            </p>
+
+            <p>
+                So today, not with a ring,  
+                but with my whole heart…
+            </p>
+
+            <p><strong>Will you choose me, again and always? 💖</strong></p>
+
+            <!-- NEXT PAGE -->
+            <a href="sweetdays.html" class="btn">Continue 💕</a>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
