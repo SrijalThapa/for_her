@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Heartfelt Notes ❤️</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        overflow: hidden;
+        position: relative;
+    }
+
+    /* Falling roses */
+    .rose {
+        position: fixed;
+        width: 80px;
+        height: 80px;
+        background: url('data:image/png;base64,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') no-repeat center/contain;
+        top: -100px;
+        animation-name: fall;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Floating photos on sides */
+   /* Floating photos on sides */
+.photo {
+    position: absolute;
+    width: 250px;   /* increased from 120px */
+    height: 250px;  /* increased from 120px */
+    border-radius: 15px;
+    object-fit: cover;
+    animation: float 15s ease-in-out infinite alternate;
+    opacity: 0.95;
+}
+
+@media(max-width:900px){
+    .photo {width: 110px; height: 110px;} /* increased for small screens */
+    .container {padding: 20px;}
+}
+
+    /* Container for central notes */
+    .container {
+        background: rgba(255,255,255,0.95);
+        padding: 50px 50px;
+        border-radius: 20px;
+        max-width: 800px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        z-index: 10;
+        position: relative;
+    }
+
+
+    .photo {
+    animation: floatScale 6s ease-in-out infinite alternate;
+}
+    @keyframes floatScale {
+    0%   { transform: translateY(0px) rotate(-5deg) scale(1); }
+    50%  { transform: translateY(15px) rotate(2deg) scale(1.05); }
+    100% { transform: translateY(30px) rotate(5deg) scale(1); }
+}
+
+    h1 {
+        color: #ff4b5c;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        color: #333;
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        background: #ff4b5c;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    button:hover {
+        background: #ff6f91;
+    }
+
+    @media(max-width:900px){
+        .photo {width: 90px; height: 90px;}
+        .container {padding: 20px;}
+    }
+</style>
+</head>
+<body>
+
+
+<!-- Hanging Lights -->
+<div class="lights">
+    <svg viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <!-- Wire -->
+        <path d="M0 80 Q250 140 500 90 T1000 80"
+              stroke="#333"
+              stroke-width="3"
+              fill="none"/>
+
+        <!-- Bulbs -->
+        <circle class="bulb" cx="100" cy="95" r="8"/>
+        <circle class="bulb" cx="200" cy="110" r="8"/>
+        <circle class="bulb" cx="300" cy="95" r="8"/>
+        <circle class="bulb" cx="400" cy="115" r="8"/>
+        <circle class="bulb" cx="500" cy="95" r="8"/>
+        <circle class="bulb" cx="600" cy="115" r="8"/>
+        <circle class="bulb" cx="700" cy="95" r="8"/>
+        <circle class="bulb" cx="800" cy="110" r="8"/>
+        <circle class="bulb" cx="900" cy="95" r="8"/>
+    </svg>
+</div>
+
+
+
+
+<div class="container">
+    <h1>My Heartfelt Notes ❤️</h1>
+    <p>I don't even know where to start because words feel so small when I try to describe how I feel about you. Sometimes I just stare at your pictures and wonder how someone like me got so lucky to have someone like you. You've been my peace in pain, my calm in trouble, and my reason to smile even on days when I feel completely lost.</p>
+    <p>Do you remember the first time we really talked? I didn't know that day would change my life forever. I didn't know that one day, your voice would become the sound that keeps me going, that your name would be the one I whisper to myself when I feel like giving up.</p>
+    <p>There are nights when I lie awake thinking about you, about everything we've shared  the laughter, the small arguments, the tears, the apologies, and the promises. And I realize that no matter how hard life gets, I never want to go through a single day without you in it.</p>
+    <p>Sometimes I'm scared, you know? Scared of losing you. But even if it ever does, I want you to remember this: I'll always carry you with me — in my words, in my thoughts, in my heart.</p>
+    <p>You're not just my girlfriend; you're a part of who I am. If I could, I'd wrap every moment we've shared in a box and keep it close forever. Every laugh, every hug, every "I love you" whispered between breaths — they're pieces of my heart now, all belonging to you.</p>
+    <p>And maybe one day when you read this again, I want you to remember  I didn't love you for how beautiful you are, though you are breathtaking. I loved you for how you made me feel. For how you looked at me like I was enough. For how you stood by me when you didn't have to. For how you loved me even when I didn't love myself enough.</p>
+    <p>So if ever you doubt it even for a second, just know this, you've changed me in ways I can never explain. You've made me softer, kinder, better. And if my life were to end tomorrow, I'd go knowing that I truly loved you and I still do.</p>
+    <button onclick="alert('❤️ I love you mero kali!!!! sending hugs from miles away')">Yes ❤️</button>
+</div>
+
+<script>
+    // Falling roses
+    for(let i=0;i<30;i++){
+        const rose = document.createElement('div');
+        rose.className = 'rose';
+        rose.style.left = Math.random()*100 + 'vw';
+        rose.style.animationDuration = (5 + Math.random()*5) + 's';
+        rose.style.animationDelay = Math.random()*5 + 's';
+        document.body.appendChild(rose);
+    }
+
+    // Floating side photos (6 photos)
+    const photos = [
+        'uni.jpeg', 
+        'tinjure.jpeg', 
+        'pilot.jpeg',
+        'chin.jpeg',
+        'bkt.jpeg',
+        'bhede.jpeg'
+    ]; // replace with your own photos
+
+    photos.forEach((src, i)=>{
+        const img = document.createElement('img');
+        img.src = src;
+        img.className = 'photo';
+        // Left 3 photos on left, right 3 photos on right
+        if(i<3){
+            img.style.left = '5vw';
+            img.style.top = (10 + i*25) + 'vh';
+        } else {
+            img.style.right = '5vw';
+            img.style.top = (10 + (i-3)*25) + 'vh';
+        }
+        document.body.appendChild(img);
+    });
+</script>
+
+</body>
+</html>
