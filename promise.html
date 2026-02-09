@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Promise to You 🤞❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        min-height: 100vh;
+        padding: 20px;
+        overflow-y: auto;   /* ✅ allow vertical scroll */
+        position: relative;
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: fixed; /* fixed so scrolling doesn’t break animation */
+        width: 22px;
+        height: 22px;
+        background: rgba(255, 75, 92, 0.45);
+        transform: rotate(45deg);
+        animation: float 8s linear infinite;
+        z-index: 0;
+        pointer-events: none;
+    }
+
+    .heart::before,
+    .heart::after {
+        content: '';
+        position: absolute;
+        width: 22px;
+        height: 22px;
+        background: rgba(255, 75, 92, 0.45);
+        border-radius: 50%;
+    }
+
+    .heart::before {
+        top: -11px;
+        left: 0;
+    }
+
+    .heart::after {
+        left: -11px;
+        top: 0;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(110vh) rotate(45deg);
+            opacity: 0;
+        }
+        30% { opacity: 1; }
+        100% {
+            transform: translateY(-120px) rotate(45deg);
+            opacity: 0;
+        }
+    }
+
+    /* Container */
+    .container {
+        background: rgba(255,255,255,0.96);
+        max-width: 720px;
+        width: 100%;
+        margin: 40px auto; /* ✅ centers horizontally + allows scroll */
+        padding: 35px 30px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+        position: relative;
+        z-index: 1;
+        animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+        color: #ff4b5c;
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 18px;
+    }
+
+    .promise-box {
+        background: #fff0f5;
+        padding: 22px;
+        border-radius: 18px;
+        margin: 25px 0;
+        box-shadow: inset 0 0 10px rgba(255,75,92,0.15);
+        text-align: left;
+    }
+
+    .promise-box p {
+        margin-bottom: 12px;
+        font-size: 1.05rem;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+        background: linear-gradient(45deg, #ff4b5c, #ff6f91);
+        color: #fff;
+        padding: 14px 36px;
+        font-size: 1.1rem;
+        border-radius: 50px;
+        box-shadow: 0 10px 25px rgba(255,75,92,0.4);
+        transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 14px 30px rgba(255,75,92,0.5);
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 600px) {
+        h1 { font-size: 2rem; }
+        p { font-size: 1.05rem; }
+        .container {
+            padding: 26px 20px;
+            margin: 20px auto;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts -->
+<script>
+    for (let i = 0; i < 28; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDelay = Math.random() * 6 + 's';
+        heart.style.animationDuration = 6 + Math.random() * 6 + 's';
+        document.body.appendChild(heart);
+    }
+</script>
+
+<div class="container">
+    <h1>Happy Promise Day nani ❤️</h1>
+
+    <p>
+        Aaja Promise Day ho, and I don’t want to make fake promises.  
+        I want to make promises that I truly mean  and will keep, I swear.
+    </p>
+
+    <div class="promise-box">
+        <p>
+            Maile agadi dherai galti gare, tmi dherai hurt vayeu  I know.  
+            Timro najar ma sayed ma dherai giri sake, ani sayed tmi farkera aauna ni man xaina hola.
+            But this stupid heart still chooses to wait… hoping one day tmi farkera aayera
+            malai hug garera vanxau ,Thanks for waiting.
+        </p>
+
+        <p>
+            Timro absence le malai sabai sikayo. Aainda bata timlai hurt hune
+            kunai pani galti hudaina. hamro relation ma j j vayo , ma sabai ma wrong thiye 
+            and I want to make everything better than before. just malai aaut alast chance deu na nani i will win your trust back i swear kei galti gardina
+        </p>
+
+        <p>🤍 I promise to listen to everything you say  not just for you, but for us.</p>
+        <p>🌙 I promise to be understanding, caring, and protective when things feel heavy.</p>
+        <p>🫶 I promise to protect your heart and fight for you like it’s my own.</p>
+        <p>🌸 And most of all, I promise to never stop trying for us.</p>
+        <p>🫶 These eyes that are full of you will never look at anyone else —whether you’re present or absent.</p>
+    </div>
+
+    <p>
+        Mero kalii, these promises come straight from my heart.  
+        Not just for today, but for every tomorrow I hope to share with you.
+    </p>
+
+    <a href="memories.html" class="btn">Continue 💕</a>
+</div>
+
+</body>
+</html>
