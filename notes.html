@@ -5,132 +5,123 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>My Heartfelt Notes ❤️</title>
 <style>
-    body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        overflow-x: hidden;
-        position: relative;
-    }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
 
-    /* Falling roses */
-    .rose {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        background: url('data:image/png;base64,iVBOR...') no-repeat center/contain;
-        top: -100px;
-        animation-name: fall;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        z-index: 1;
-    }
+/* Falling roses */
+.rose {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: url('data:image/png;base64,iVBOR...') no-repeat center/contain;
+    top: -100px;
+    animation-name: fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    z-index: 1;
+}
 
-    @keyframes fall {
-        0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
-    }
+@keyframes fall {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
 
-    /* Floating photos on sides */
-    .photo {
-        position: absolute;
-        width: 220px;
-        height: 220px;
-        border-radius: 15px;
-        object-fit: cover;
-        animation: floatScale 6s ease-in-out infinite alternate;
-        opacity: 0.95;
-        z-index: 2;
-    }
+/* Floating photos */
+.photo {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    animation: floatScale 6s ease-in-out infinite alternate;
+    opacity: 0.95;
+    z-index: 2;
+}
 
-    @keyframes floatScale {
-        0%   { transform: translateY(0px) rotate(-5deg) scale(1); }
-        50%  { transform: translateY(15px) rotate(2deg) scale(1.05); }
-        100% { transform: translateY(30px) rotate(5deg) scale(1); }
-    }
+@keyframes floatScale {
+    0%   { transform: translateY(0px) rotate(-5deg) scale(1); }
+    50%  { transform: translateY(15px) rotate(2deg) scale(1.05); }
+    100% { transform: translateY(30px) rotate(5deg) scale(1); }
+}
 
-    /* Central container */
-    .container {
-        background: rgba(255,255,255,0.95);
-        padding: 40px 30px;
-        border-radius: 20px;
-        max-width: 750px;
-        width: 90%;
-        text-align: center;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        z-index: 10;
-        position: relative;
-    }
+/* Central container */
+.container {
+    background: rgba(255,255,255,0.95);
+    padding: 30px 20px;
+    border-radius: 20px;
+    max-width: 90%;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 10;
+    margin-top: 20px;
+}
 
-    h1 {
-        color: #ff4b5c;
-        margin-bottom: 20px;
-        font-size: 1.8em;
-    }
+h1 {
+    color: #ff4b5c;
+    margin-bottom: 20px;
+    font-size: 1.7em;
+}
 
-    p {
-        font-size: 16px;
-        color: #333;
-        margin-bottom: 15px;
-        text-align: left;
-        line-height: 1.5em;
-    }
+p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: justify;
+    line-height: 1.6em;
+}
 
-    button {
-        padding: 12px 25px;
-        border: none;
-        border-radius: 8px;
-        background: #ff4b5c;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-        margin-top: 15px;
-    }
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: #ff4b5c;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
 
-    button:hover {
-        background: #ff6f91;
-    }
+button:hover {
+    background: #ff6f91;
+}
 
-    /* Responsive styles for mobile */
-    @media(max-width: 900px){
-        .photo { width: 130px; height: 130px; }
-        .container { padding: 25px 15px; }
-        h1 { font-size: 1.5em; }
-        p { font-size: 14px; }
-    }
+/* Responsive for tablets */
+@media(max-width: 900px){
+    .photo { width: 140px; height: 140px; }
+    h1 { font-size: 1.5em; }
+    p { font-size: 15px; }
+}
 
-    @media(max-width: 500px){
-        .photo { width: 90px; height: 90px; }
-        p { font-size: 13px; }
-        button { font-size: 14px; padding: 10px 20px; }
-    }
+/* Responsive for phones */
+@media(max-width: 500px){
+    .photo { width: 100px; height: 100px; }
+    h1 { font-size: 1.3em; }
+    p { font-size: 14px; }
+    .container { padding: 20px 15px; }
+}
 </style>
 </head>
 <body>
 
 <div class="container">
     <h1>My Heartfelt Notes ❤️</h1>
-<p>
-I don't even know where to start because words feel so small when I try to describe how I feel about you. Sometimes I just stare at your pictures and wonder how someone like me got so lucky to have someone like you. You've been my peace in pain, my calm in stress, and my reason to smile even on days when I feel completely lost.
-</p>
-<p>
-Do you remember the first time we really talked? I didn't know that day would change my life forever. I didn't know that one day, your voice would become the sound that keeps me going, that your name would be the one I whisper to myself when I feel like giving up. You didn't just walk into my life  you walked into my soul and made a home there.
-</p>
-<p>
-There are nights when I lie awake thinking about you, about everything we've shared  the laughter, the small arguments, the tears, the apologies, and the promises. And I realize that no matter how hard life gets, I never want to go through a single day without you in it. You've taught me what love truly feels like not just excitement, but the kind of love that stays, that forgives, that understands.
-</p>
-<p> I'm scared, life might take us in different directions. But even if it ever does, I want you to remember this: I'll always carry you with me  in my words, in my thoughts, in my heart. You're not just my girlfriend; you're a part of who I am.
-</p>
-<p>
-If I could, I'd wrap every moment we've shared in a box and keep it close forever. Every laugh, every hug, every "I love you" whispered between breaths  they're pieces of my heart now, all belonging to you.
-</p>
+    <p>I don't even know where to start because words feel so small when I try to describe how I feel about you. Sometimes I just stare at your pictures and wonder how someone like me got so lucky to have someone like you. You've been my peace in pain, my calm in stress, and my reason to smile even on days when I feel completely lost.</p>
+    <p>Do you remember the first time we really talked? I didn't know that day would change my life forever. I didn't know that one day, your voice would become the sound that keeps me going, that your name would be the one I whisper to myself when I feel like giving up. You didn't just walk into my life – you walked into my soul and made a home there.</p>
+    <p>There are nights when I lie awake thinking about you, about everything we've shared – the laughter, the small arguments, the tears, the apologies, and the promises. And I realize that no matter how hard life gets, I never want to go through a single day without you in it. You've taught me what love truly feels like, not just excitement, but the kind of love that stays, that forgives, that understands.</p>
+    <p>I'm scared life might take us in different directions. But even if it ever does, I want you to remember this: I'll always carry you with me – in my words, in my thoughts, in my heart. You're not just my girlfriend; you're a part of who I am.</p>
+    <p>If I could, I'd wrap every moment we've shared in a box and keep it close forever. Every laugh, every hug, every "I love you" whispered between breaths – they're pieces of my heart now, all belonging to you.</p>
 
-    <button onclick="alert('❤️ I love you mero kali❤️ sending hugs from miles away  and waiting for your messages❤️')">Yes ❤️</button>
+    <button onclick="alert('❤️ I love you mero kali❤️ sending hugs from miles away and waiting for your messages❤️')">Yes ❤️</button>
 </div>
 
 <script>
